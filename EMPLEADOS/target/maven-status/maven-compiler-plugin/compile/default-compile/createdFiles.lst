@@ -1,0 +1,10 @@
+com\alvaro\empleados\dao\EmployeeDao.class
+com\alvaro\empleados\configuration\HibernateConfiguration.class
+com\alvaro\empleados\configuration\AppInitializer.class
+com\alvaro\empleados\dao\AbstractDao.class
+com\alvaro\empleados\service\EmployeeService.class
+com\alvaro\empleados\configuration\AppConfig.class
+com\alvaro\empleados\controller\AppController.class
+com\alvaro\empleados\dao\EmployeeDaoImpl.class
+com\alvaro\empleados\service\EmployeeServiceImpl.class
+com\alvaro\empleados\model\Employee.class

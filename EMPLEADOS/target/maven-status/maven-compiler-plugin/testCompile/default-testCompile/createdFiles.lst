@@ -1,0 +1,5 @@
+com\alvaro\empleados\configuration\HibernateTestConfiguration.class
+com\alvaro\empleados\controller\AppControllerTest.class
+com\alvaro\empleados\dao\EmployeeDaoImplTest.class
+com\alvaro\empleados\dao\EntityDaoImplTest.class
+com\alvaro\empleados\service\EmployeeServiceImplTest.class
