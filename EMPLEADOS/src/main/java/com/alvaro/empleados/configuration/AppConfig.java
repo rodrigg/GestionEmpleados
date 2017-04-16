@@ -1,20 +1,28 @@
 package com.alvaro.empleados.configuration;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.convert.converter.Converter;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.PathMatchConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
+
+import com.alvaro.empleados.converter.ClienteConverter;
 
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = "com.alvaro.empleados")
-public class AppConfig {
-	
+public class AppConfig extends WebMvcConfigurerAdapter{
+	@Autowired
+    ClienteConverter clienteConverter;
 	@Bean
 	public ViewResolver viewResolver() {
 		InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
@@ -31,5 +39,14 @@ public class AppConfig {
 	    messageSource.setBasename("messages");
 	    return messageSource;
 	}
+	
+	 public void addFormatters(FormatterRegistry registry) {
+	        registry.addConverter(clienteConverter);
+	    }
+	     
+	 public void configurePathMatch(PathMatchConfigurer matcher) {
+	        matcher.setUseRegisteredSuffixPatternMatch(true);
+	    }
+	
 }
 

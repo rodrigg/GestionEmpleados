@@ -10,15 +10,11 @@
       </class> <!-- com.alvaro.empleados.controller.AppControllerTest -->
       <class name="com.alvaro.empleados.dao.EmployeeDaoImplTest">
         <methods>
-          <include name="findAllEmployees"/>
           <include name="springTestContextBeforeTestClass"/>
-          <include name="deleteEmployeeBySsn"/>
-          <include name="findEmployeeBySsn"/>
-          <include name="findById"/>
-          <include name="saveEmployee"/>
+          <include name="setUp"/>
           <include name="springTestContextPrepareTestInstance"/>
           <include name="springTestContextAfterTestClass"/>
-          <include name="deleteEmployeeByInvalidSsn"/>
+          <include name="springTestContextBeforeTestMethod"/>
           <include name="springTestContextAfterTestMethod"/>
         </methods>
       </class> <!-- com.alvaro.empleados.dao.EmployeeDaoImplTest -->
@@ -27,6 +23,27 @@
           <include name="setUp"/>
         </methods>
       </class> <!-- com.alvaro.empleados.service.EmployeeServiceImplTest -->
+      <class name="com.alvaro.empleados.dao.ClienteDaoImplTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="setUp"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.alvaro.empleados.dao.ClienteDaoImplTest -->
+      <class name="com.alvaro.empleados.dao.TrabajoDaoImplTest">
+        <methods>
+          <include name="springTestContextBeforeTestClass"/>
+          <include name="setUp"/>
+          <include name="springTestContextPrepareTestInstance"/>
+          <include name="springTestContextAfterTestClass"/>
+          <include name="springTestContextBeforeTestMethod"/>
+          <include name="saveTrabajo"/>
+          <include name="springTestContextAfterTestMethod"/>
+        </methods>
+      </class> <!-- com.alvaro.empleados.dao.TrabajoDaoImplTest -->
     </classes>
   </test> <!-- Command line test(failed) -->
 </suite> <!-- Failed suite [Command line suite] -->
