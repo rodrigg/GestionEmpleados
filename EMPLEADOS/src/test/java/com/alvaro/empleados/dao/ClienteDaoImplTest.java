@@ -63,7 +63,7 @@ public class ClienteDaoImplTest extends EntityDaoImplTest{
 		Cliente cliente = new Cliente();
 		cliente.setNombre("Karen");
 		cliente.setCif("12345");
-		cliente.setDireccion("dasdsa");
+		
 	    return cliente;
 	}
 }

@@ -10,7 +10,7 @@ public interface TrabajoDao {
 
 	void saveTrabajo(Trabajo trabajo);
 	
-	
+	void updateTrabajo(Trabajo trabajo);
 	
 	List<Trabajo> findAllTrabajos();
 

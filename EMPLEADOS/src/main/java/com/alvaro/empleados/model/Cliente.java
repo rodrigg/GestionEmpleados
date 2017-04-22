@@ -5,6 +5,7 @@ package com.alvaro.empleados.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -36,8 +37,15 @@ public class Cliente {
 
 	@Column(name = "direccion", nullable = false)
 	private String direccion;
+	@ManyToMany(cascade=CascadeType.ALL, mappedBy="clientes")  
+	private Set<Trabajo> trabajos;  
 	
-	
+	public Set<Trabajo> getTrabajos() {
+		return trabajos;
+	}
+	public void setTrabajos(Set<Trabajo> trabajos) {
+		this.trabajos = trabajos;
+	}
 	public int getId() {
 		return id;
 	}

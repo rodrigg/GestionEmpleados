@@ -32,7 +32,9 @@ public class ClienteServiceImpl implements ClienteService {
 	public void updateCliente(Cliente cliente) {
 		Cliente entity = dao.findById(cliente.getId());
 		if(entity!=null){
-			
+			entity.setId(cliente.getId());
+			entity.setCif(cliente.getCif());
+			entity.setNombre(cliente.getNombre());
 		}
 	}
 

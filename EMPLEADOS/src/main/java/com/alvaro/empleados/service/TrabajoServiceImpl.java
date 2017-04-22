@@ -28,18 +28,12 @@ public class TrabajoServiceImpl implements TrabajoService {
 	/*
 	 * Since the method is running with Transaction, No need to call hibernate update explicitly.
 	 * Just fetch the entity from db and update it with proper values within transaction.
-	 * It will be updated in db once transaction ends. 
+	 * It will be updated in db on,ce transaction ends. 
 	 */
 	public void updateTrabajo(Trabajo trabajo) {
-		Trabajo entity = dao.findById(trabajo.getId());
-		if(entity!=null){
-			entity.setId(trabajo.getId());
-			entity.setNref(trabajo.getNref());
-            entity.setfTrabajo(new Date());
-            entity.setLugar(trabajo.getLugar());
-            entity.setClientes(trabajo.getClientes());
-          
-		}
+		
+		dao.updateTrabajo(trabajo);
+		
 	}
 
 	@Override

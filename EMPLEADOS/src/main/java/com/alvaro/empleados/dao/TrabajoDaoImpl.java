@@ -16,7 +16,8 @@ import com.alvaro.empleados.model.Trabajo;
 public class TrabajoDaoImpl extends AbstractDao<Integer, Trabajo> implements TrabajoDao {
 	
 	public Trabajo findById(int id) {
-		 Trabajo trabajo = getByKey(id);
+		 
+		Trabajo trabajo = getByKey(id);
 	        if(trabajo!=null){
 	            Hibernate.initialize(trabajo.getClientes());
 	        }
@@ -24,7 +25,12 @@ public class TrabajoDaoImpl extends AbstractDao<Integer, Trabajo> implements Tra
 	}
 
 	public void saveTrabajo(Trabajo trabajo) {
-		persist(trabajo);
+		getSession().flush();
+		 if(trabajo!=null){
+			 Hibernate.initialize(trabajo.getClientes());
+		}
+		 persist(trabajo);
+		
 	}
 
 	
@@ -33,6 +39,15 @@ public class TrabajoDaoImpl extends AbstractDao<Integer, Trabajo> implements Tra
 	public List<Trabajo> findAllTrabajos() {
 		Criteria criteria = createEntityCriteria();
 		return (List<Trabajo>) criteria.list();
+	}
+
+	@Override
+	public void updateTrabajo(Trabajo trabajo) {
+		 if(trabajo!=null){
+			 Hibernate.initialize(trabajo.getClientes());
+		}
+		getSession().update(trabajo);
+		
 	}
 
 	
